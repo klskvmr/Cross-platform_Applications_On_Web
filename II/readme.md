@@ -1,0 +1,1 @@
+for correct work you have to compile Main.ts (ctrl + shift + b in VSC) (you also must have installed typescript compiler)
