@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>University Page</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .pink-background {
+           background-color: rgb(255, 231, 235);
+        }
+
+        .btn {
+           color: #000;
+           background-color: rgb(255, 231, 235);
+        }
+
+        h1 {
+           text-align: center;
+        }
+
+        table, td, th, tr {
+           border: 2px solid pink;
+           text-align: center;
+        }
+
+        table {
+           border-collapse: collapse;
+           width: 100%;
+        } 
+
+        th {
+           height: 50px;
+        }
+
+        caption {
+           font-size: large;
+           font-weight: bold;
+        }
+     </style>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid pink-background">
+          <div class="container">
+            <h1 class="display-3">University page (づ｡◕‿‿◕｡)づ</h1>
+          </div>
+    </div>
+        
+    <div class="container" id="app">
+        <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="show = 1;">Persons</button>
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="show = 2;">Teachers</button>
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="show = 3;">Students</button>
+        </div>
+        <br>
+        <div v-if="show > 0" id="table">
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="show = 0;">Hide Table</button>
+        </div>
+        <br>
+        <div v-if="show == 1" id="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Name</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Patronymic</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Surname</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Birth Date</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Weight</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr v-for="person in GetPersons()">
+                        <td> {{person.Name}} </td>
+                        <td> {{person.Patronymic}} </td>
+                        <td> {{person.Surname}} </td>
+                        <td> {{person.BirthDate != undefined ? person.BirthDate : "XXXX-XX-XX"}} </td>
+                        <td> {{person.Weight != undefined ? person.Weight : "XX"}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-if="show == 2" id="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Name</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Patronymic</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Surname</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">BirthDate</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Weight</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Department</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Rank</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Experience</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr v-for="teacher in GetTeachers()">
+                        <td> {{teacher.Name}} </td>
+                        <td> {{teacher.Patronymic}} </td>
+                        <td> {{teacher.Surname}} </td>
+                        <td> {{teacher.BirthDate != undefined ? teacher.BirthDate : "XXXX-XX-XX"}} </td>
+                        <td> {{teacher.Weight != undefined ? teacher.Weight : "XX"}} </td>
+                        <td> {{teacher.Department}} </td>
+                        <td> {{teacher.Rank}} </td>
+                        <td> {{teacher.Experience}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div v-if="show == 3" id="table">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Name</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Patronymic</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Surname</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Birth Date</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Weight</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Course</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">Group</th>
+                        <th scope="col" style="background-color:pink; border: 2px solid white;">GPA</th>
+                    </tr>
+                </thead>
+                <tbody class="table">
+                    <tr v-for="student in GetStudents()">
+                        <td> {{student.Name}} </td>
+                        <td> {{student.Patronymic}} </td>
+                        <td> {{student.Surname}} </td>
+                        <td> {{student.BirthDate != undefined ? student.BirthDate : "XXXX-XX-XX"}} </td>
+                        <td> {{student.Weight != undefined ? student.Weight : "XX"}} </td>
+                        <td> {{student.Course}} </td>
+                        <td> {{student.Group}} </td>
+                        <td> {{student.GPA}} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="alert alert-light" role="alert"></div>
+        <br>
+        <div class="btn-group w-100" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="showform = 1;">Add Person</button>
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="showform = 2;">Add Teacher</button>
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="showform = 3;">Add Student</button>
+        </div>
+        <br>
+
+        <div v-if="showform > 0" id="table">
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" v-on:click="showform = 0;">Hide Form</button>
+        </div>
+
+        <div v-if="showform == 1" id="table">
+            <form id="form">
+                <div class="row">
+                    <div class="col">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col">
+                        <label>Patronymic</label>
+                        <input type="text" class="form-control" placeholder="Patronymic">
+                    </div>
+
+                    <div class="col">
+                        <label>Surname</label>
+                        <input type="text" class="form-control" placeholder="Surname">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Birth Date</label>
+                        <input type="text" class="form-control" placeholder="yyyy-dd-mm">
+                    </div>
+                    <div class="col">
+                        <label>Weight</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                </div>
+                <div class="row"></div>
+
+                <br>
+                <button type="button" class="btn btn-light btn-lg btn-block" v-on:click="addPerson">Input</button>
+            </form>
+        </div>
+        <div v-if="showform == 2" id="table">
+            <form id="form">
+                <div class="row">
+                    <div class="col">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col">
+                        <label>Patronymic</label>
+                        <input type="text" class="form-control" placeholder="Patronymic">
+                    </div>
+                    <div class="col">
+                        <label>Surname</label>
+                        <input type="text" class="form-control" placeholder="Surname">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Birth Date</label>
+                        <input type="text" class="form-control" placeholder="yyyy-dd-mm">
+                    </div>
+                    <div class="col">
+                        <label>Weight</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                    <div class="col">
+                        <label>Department</label>
+                        <input type="text" class="form-control" placeholder="Department">
+                    </div>
+                    <div class="col">
+                        <label>Experience</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                    <div class="col">
+                        <label>Rank</label>
+                        <input type="text" class="form-control" placeholder="Rank">
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-light btn-lg btn-block" v-on:click="addTeacher">Input</button>
+            </form>
+        </div>
+        <div v-if="showform == 3" id="table">
+            <form id="form">
+                <div class="row">
+                    <div class="col">
+                        <label>Name</label>
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="col">
+                        <label>Patronymic</label>
+                        <input type="text" class="form-control" placeholder="Patronymic">
+                    </div>
+                    <div class="col">
+                        <label>Surname</label>
+                        <input type="text" class="form-control" placeholder="Surname">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Birth Date</label>
+                        <input type="text" class="form-control" placeholder="yyyy-dd-mm">
+                    </div>
+                    <div class="col">
+                        <label>Weight</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                    <div class="col">
+                        <label>Course</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                    <div class="col">
+                        <label>Group</label>
+                        <input type="text" class="form-control" placeholder="Group">
+                    </div>
+                    <div class="col">
+                        <label>GPA</label>
+                        <input type="text" class="form-control" placeholder="Number">
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="btn btn-light btn-lg btn-block" v-on:click="addStudent">Input</button>
+            </form>
+        </div>
+        <br>
+    </div>
+
+    <script src="Main.js"> </script>
+</body>
+</html>
