@@ -1,0 +1,53 @@
+[
+    {
+        "Name": "Igor",
+        "Patronymic": "Gennadyevich",
+        "LastName": "Solovyev",
+        "BirthDate": "1980-07-07",
+        "Weight": 85,
+        "Department": "am",
+        "Rank": 3,
+        "Experience": 10
+    },
+
+    {
+        "Name": "Mark",
+        "Patronymic": "Vitalyevich",
+        "LastName": "Grass",
+        "BirthDate": "1963-26-10",
+        "Weight": 93,
+        "Department": "ai",
+        "Rank": 5,
+        "Experience": 26
+    },
+   
+    {
+        "Name": "Jason",
+        "Patronymic": "Vladimirovich",
+        "LastName": "Young",
+        "BirthDate": "1990-12-09",
+        "Weight": 75,
+        "Department": "am",
+        "Rank": 2,
+        "Experience": 3
+    },
+
+    {
+        "Name": "Courtney",
+        "Patronymic": "Mikhailovna",
+        "LastName": "Brown",
+        "Department": "wd",
+        "Rank": 4,
+        "Experience": 17
+    },
+
+    {
+        "Name": "Johnas",
+        "Patronymic": "Johnas",
+        "LastName": "Johnas",
+        "Weight": 85,
+        "Department": "hr",
+        "Rank": 1,
+        "Experience": 1
+    }
+]

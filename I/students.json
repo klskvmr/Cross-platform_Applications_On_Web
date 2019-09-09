@@ -1,0 +1,52 @@
+[
+    {
+        "Name": "John",
+        "Patronymic": "Valeryevich",
+        "LastName": "Smith",
+        "BirthDate": "1999-30-08",
+        "Weight": 70,
+        "Course": 3,
+        "Group": "B613",
+        "GPA": 4.6
+    },
+
+    {
+        "Name": "Dustin",
+        "Patronymic": "Vasilyevich",
+        "LastName": "Green",
+        "BirthDate": "1998-15-04",
+        "Weight": 83,
+        "Course": 3,
+        "Group": "B613",
+        "GPA": 3.9
+    },
+   
+    {
+        "Name": "Trevor",
+        "Patronymic": "Aleksandrovich",
+        "LastName": "Parkson",
+        "BirthDate": "2001-01-12",
+        "Course": 1,
+        "Group": "A701",
+        "GPA": 4.0
+    },
+
+    {
+        "Name": "Robert-Afanasiy",
+        "Patronymic": "Afanasiy-Robertovich",
+        "LastName": "Glass",
+        "Course": 4,
+        "Group": "G302",
+        "GPA": 3.3
+    },
+
+    {
+        "Name": "Rasmus",
+        "Patronymic": "Semenovich",
+        "LastName": "Johansson",
+        "Weight": 92,
+        "Course": 2,
+        "Group": "C200",
+        "GPA": 4.7
+    }
+]

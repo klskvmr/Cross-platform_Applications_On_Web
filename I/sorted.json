@@ -1,0 +1,95 @@
+[
+	{
+		"Name": "Courtney",
+		"Patronymic": "Mikhailovna",
+		"LastName": "Brown",
+		"Department": "wd",
+		"Rank": 4,
+		"Experience": 17
+	},
+	{
+		"Name": "Dustin",
+		"Patronymic": "Vasilyevich",
+		"LastName": "Green",
+		"BirthDate": "1998-15-04",
+		"Weight": 83,
+		"Course": 3,
+		"Group": "B613",
+		"GPA": 3.9
+	},
+	{
+		"Name": "Igor",
+		"Patronymic": "Gennadyevich",
+		"LastName": "Solovyev",
+		"BirthDate": "1980-07-07",
+		"Weight": 85,
+		"Department": "am",
+		"Rank": 3,
+		"Experience": 10
+	},
+	{
+		"Name": "Jason",
+		"Patronymic": "Vladimirovich",
+		"LastName": "Young",
+		"BirthDate": "1990-12-09",
+		"Weight": 75,
+		"Department": "am",
+		"Rank": 2,
+		"Experience": 3
+	},
+	{
+		"Name": "John",
+		"Patronymic": "Valeryevich",
+		"LastName": "Smith",
+		"BirthDate": "1999-30-08",
+		"Weight": 70,
+		"Course": 3,
+		"Group": "B613",
+		"GPA": 4.6
+	},
+	{
+		"Name": "Johnas",
+		"Patronymic": "Johnas",
+		"LastName": "Johnas",
+		"Weight": 85,
+		"Department": "hr",
+		"Rank": 1,
+		"Experience": 1
+	},
+	{
+		"Name": "Mark",
+		"Patronymic": "Vitalyevich",
+		"LastName": "Grass",
+		"BirthDate": "1963-26-10",
+		"Weight": 93,
+		"Department": "ai",
+		"Rank": 5,
+		"Experience": 26
+	},
+	{
+		"Name": "Rasmus",
+		"Patronymic": "Semenovich",
+		"LastName": "Johansson",
+		"Weight": 92,
+		"Course": 2,
+		"Group": "C200",
+		"GPA": 4.7
+	},
+	{
+		"Name": "Robert-Afanasiy",
+		"Patronymic": "Afanasiy-Robertovich",
+		"LastName": "Glass",
+		"Course": 4,
+		"Group": "G302",
+		"GPA": 3.3
+	},
+	{
+		"Name": "Trevor",
+		"Patronymic": "Aleksandrovich",
+		"LastName": "Parkson",
+		"BirthDate": "2001-01-12",
+		"Course": 1,
+		"Group": "A701",
+		"GPA": 4
+	}
+]
